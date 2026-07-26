@@ -23,6 +23,7 @@
 /bootstrap/cache/
 /database/database.sqlite
 /vendor
+OneConnect/
 Homestead.json
 Homestead.yaml
 Thumbs.db
