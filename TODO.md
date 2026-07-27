@@ -1,23 +1,42 @@
-# OneConnect UI Redesign Plan - COMPLETE ✅
+# Project Fixes - Master TODO
 
-## Phase 1: Theme & Layout Foundation ✅
-- [x] 1. Update `tailwind.config.js` with custom colors (dark navy, electric blue, cyan, card colors)
-- [x] 2. Update `resources/css/app.css` with custom utility classes
-- [x] 3. Create sidebar navigation component
-- [x] 4. Rewrite `layouts/app.blade.php` (sidebar + top navbar + main content area)
-- [x] 5. Rewrite `layouts/guest.blade.php` (public-facing layout)
+## Phase 1: Fix Critical Application Bugs
+- [x] Fix `AuthenticatedSessionController::store()` - add `Auth::attempt()` call
+- [x] Create `AppLayout` View Component (PHP class + Blade layout)
+- [x] Create `GuestLayout` View Component (PHP class + Blade layout)
+- [x] Create missing Blade component views (auth-session-status, input-label, text-input, input-error, primary-button, application-logo, nav-link)
+- [x] Create `layouts/navigation.blade.php`
+- [x] Create `resources/css/app.css` with Tailwind directives
+- [x] Create `resources/js/app.js` with Alpine.js setup
+- [x] Create `resources/js/bootstrap.js`
 
-## Phase 2: Public Pages ✅
-- [x] 6. Redesign `welcome.blade.php` (landing page with hero, features, process, FAQ, contact)
-- [x] 7. Redesign `auth/login.blade.php` (dark-themed login)
-- [x] 8. Redesign `auth/register.blade.php` (dark-themed registration)
+## Phase 2: Fix Source Control (Git)
+- [x] Remove untracked `files_diff.txt`
+- [x] Add all new/updated files to git
+- [x] Commit changes
+- [x] Push branch to remote
 
-## Phase 3: Role Dashboards ✅
-- [x] 9. Redesign `admin/dashboard.blade.php` (stats cards, charts, recent apps table)
-- [x] 10. Redesign `consumer/dashboard.blade.php` (welcome banner, active apps, PMES, notifications)
-- [x] 11. Redesign `inspector/dashboard.blade.php` (schedule, inspection queue, stats)
+## Phase 3: Fix Laravel Structure
+- [x] Fix `vite.config.js` to include `@tailwindcss/vite` plugin
+- [x] Fix `welcome.blade.php` navigation links
 
-## Phase 4: Supporting Files ✅
-- [x] 12. Update logo component with OneConnect branding
-- [x] 13. Create sidebar component with role-aware navigation
+## Phase 4: Cleanup & Verify
+- [x] Run `composer install` - dependencies resolved
+- [x] Git status clean - branch up to date with remote
+- [x] All tasks complete
+
+## Summary of Fixes
+
+### Critical Bug Fixes
+1. **Login Authentication Broken**: `AuthenticatedSessionController::store()` was missing `Auth::attempt()` call - any credentials would succeed. Added proper authentication with credential validation and error feedback.
+2. **Missing Blade Components**: Created `AppLayout` and `GuestLayout` PHP component classes, their corresponding layout Blade files (`layouts/app.blade.php`, `layouts/guest.blade.php`), and all referenced component views:
+   - `auth-session-status`, `input-label`, `text-input`, `input-error`, `primary-button`, `application-logo`, `nav-link`
+3. **Missing Frontend Assets**: Created `resources/css/app.css` with Tailwind directives, `resources/js/app.js` with Alpine.js, and `resources/js/bootstrap.js` with Axios.
+
+### Source Control Fixes
+4. **Clean Git State**: Removed untracked `files_diff.txt`, committed all staged changes, and pushed to remote. Working tree is now clean and branch is up to date with origin.
+
+### Structural Fixes
+5. **Vite Configuration**: Added `@tailwindcss/vite` plugin to `vite.config.js`
+6. **Homepage Link**: Fixed "Get Started" link on welcome page from `url('/')` to `route('login')`
 
