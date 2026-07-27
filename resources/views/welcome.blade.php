@@ -79,7 +79,7 @@
         <h1>OneConnect</h1>
         <p>Welcome to your Laravel application.</p>
         <div class="links">
-            <a href="{{ url('/') }}" class="primary">Get Started</a>
+            <a href="{{ route('login') }}" class="primary">Get Started</a>
             <a href="https://laravel.com/docs" class="secondary" target="_blank">Documentation</a>
         </div>
         <div class="laravel-info">
